@@ -84,7 +84,7 @@ namespace склад
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            comboBox1.DropDownStyle=System.Windows.Forms.ComboBoxStyle.DropDownList;
         }
 
         private void PriceBox_TextChanged(object sender, EventArgs e)
@@ -96,7 +96,8 @@ namespace склад
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
             double num1 = Convert.ToDouble(numericUpDown2.Value);
-            double pr1 = double.Parse(PriceBox.Text);
+            double pr1 = 0;
+            double.TryParse(PriceBox.Text,out pr1);
             double pr2 = pr1 * num1;
             textBox3.Text = Convert.ToString(pr2);
         }

@@ -16,5 +16,9 @@ namespace склад
             public  double price { get; set; }
         public  double fulprice { get; set; }
 
+        public Guid Id { get; set; }
+
+        public string Test { get; set; }
+
     }
 }

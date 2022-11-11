@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,6 +42,7 @@
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
             this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
@@ -56,7 +57,7 @@
             this.DepterColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NDSColomun = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.noNDS = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
+            this.Columnid = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
@@ -73,7 +74,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip1.Size = new System.Drawing.Size(1088, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1169, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -88,7 +89,7 @@
             // выходToolStripMenuItem
             // 
             this.выходToolStripMenuItem.Name = "выходToolStripMenuItem";
-            this.выходToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.выходToolStripMenuItem.Size = new System.Drawing.Size(108, 22);
             this.выходToolStripMenuItem.Text = "выход";
             this.выходToolStripMenuItem.Click += new System.EventHandler(this.выходToolStripMenuItem_Click);
             // 
@@ -105,7 +106,7 @@
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
             this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.добавитьToolStripMenuItem_Click);
             // 
@@ -113,7 +114,7 @@
             // 
             this.изменитьToolStripMenuItem.Enabled = false;
             this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.изменитьToolStripMenuItem.Text = "Изменить ";
             this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.изменитьToolStripMenuItem_Click);
             // 
@@ -121,7 +122,7 @@
             // 
             this.удалитьToolStripMenuItem.Enabled = false;
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
@@ -137,7 +138,7 @@
             // 
             this.forprogramToolStripMenuItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.forprogramToolStripMenuItem.Name = "forprogramToolStripMenuItem";
-            this.forprogramToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.forprogramToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.forprogramToolStripMenuItem.Text = "О программе ";
             this.forprogramToolStripMenuItem.Click += new System.EventHandler(this.forprogramToolStripMenuItem_Click);
             // 
@@ -151,7 +152,7 @@
             this.statusStrip1.Location = new System.Drawing.Point(0, 537);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Padding = new System.Windows.Forms.Padding(1, 0, 9, 0);
-            this.statusStrip1.Size = new System.Drawing.Size(1088, 32);
+            this.statusStrip1.Size = new System.Drawing.Size(1169, 32);
             this.statusStrip1.TabIndex = 6;
             this.statusStrip1.Text = "statusStrip1";
             // 
@@ -161,7 +162,6 @@
             this.toolStripStatusLabel1.Name = "toolStripStatusLabel1";
             this.toolStripStatusLabel1.Size = new System.Drawing.Size(220, 27);
             this.toolStripStatusLabel1.Text = "Колличество товаров на складе: ";
-            this.toolStripStatusLabel1.Click += new System.EventHandler(this.toolStripStatusLabel1_Click);
             // 
             // toolStripStatusLabel2
             // 
@@ -169,7 +169,12 @@
             this.toolStripStatusLabel2.Name = "toolStripStatusLabel2";
             this.toolStripStatusLabel2.Size = new System.Drawing.Size(220, 27);
             this.toolStripStatusLabel2.Text = "Общая цена товаров(безНДС)";
-            this.toolStripStatusLabel2.Click += new System.EventHandler(this.toolStripStatusLabel2_Click);
+            // 
+            // toolStripStatusLabel3
+            // 
+            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
+            this.toolStripStatusLabel3.Size = new System.Drawing.Size(161, 27);
+            this.toolStripStatusLabel3.Text = "Общая цена товаров(сНДС)";
             // 
             // toolStrip1
             // 
@@ -180,10 +185,9 @@
             this.toolStripButton3});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(1088, 31);
+            this.toolStrip1.Size = new System.Drawing.Size(1169, 31);
             this.toolStrip1.TabIndex = 7;
             this.toolStrip1.Text = "toolStrip1";
-            this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
             // toolStripButton1
             // 
@@ -232,7 +236,8 @@
             this.Deduckt,
             this.DepterColumn,
             this.NDSColomun,
-            this.noNDS});
+            this.noNDS,
+            this.Columnid});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 55);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
@@ -240,9 +245,9 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1088, 482);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1169, 482);
             this.dataGridView1.TabIndex = 8;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick_1);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
@@ -258,9 +263,9 @@
             // AGE2Column
             // 
             this.AGE2Column.DataPropertyName = "raz";
-            dataGridViewCellStyle12.Format = "#,#,#";
-            dataGridViewCellStyle12.NullValue = null;
-            this.AGE2Column.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle1.Format = "#,#,#";
+            dataGridViewCellStyle1.NullValue = null;
+            this.AGE2Column.DefaultCellStyle = dataGridViewCellStyle1;
             this.AGE2Column.HeaderText = "Размер";
             this.AGE2Column.MinimumWidth = 8;
             this.AGE2Column.Name = "AGE2Column";
@@ -269,14 +274,14 @@
             // 
             // GenderColum
             // 
-            this.GenderColum.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.GenderColum.DataPropertyName = "mater";
             this.GenderColum.HeaderText = "Материал";
-            this.GenderColum.MinimumWidth = 8;
+            this.GenderColum.MinimumWidth = 80;
             this.GenderColum.Name = "GenderColum";
             this.GenderColum.ReadOnly = true;
             this.GenderColum.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.GenderColum.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.GenderColum.Width = 80;
             // 
             // AgeColumn
             // 
@@ -328,17 +333,18 @@
             this.noNDS.Name = "noNDS";
             this.noNDS.ReadOnly = true;
             // 
-            // toolStripStatusLabel3
+            // Columnid
             // 
-            this.toolStripStatusLabel3.Name = "toolStripStatusLabel3";
-            this.toolStripStatusLabel3.Size = new System.Drawing.Size(161, 27);
-            this.toolStripStatusLabel3.Text = "Общая цена товаров(сНДС)";
+            this.Columnid.DataPropertyName = "Id";
+            this.Columnid.HeaderText = "ID";
+            this.Columnid.Name = "Columnid";
+            this.Columnid.ReadOnly = true;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1088, 569);
+            this.ClientSize = new System.Drawing.Size(1169, 569);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.toolStrip1);
             this.Controls.Add(this.statusStrip1);
@@ -378,6 +384,7 @@
         private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.DataGridViewTextBoxColumn FullNameColumm;
         private System.Windows.Forms.DataGridViewTextBoxColumn AGE2Column;
         private System.Windows.Forms.DataGridViewTextBoxColumn GenderColum;
@@ -387,7 +394,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DepterColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn NDSColomun;
         private System.Windows.Forms.DataGridViewTextBoxColumn noNDS;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Columnid;
     }
 }
 
