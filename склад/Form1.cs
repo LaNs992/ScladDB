@@ -21,7 +21,7 @@ namespace склад
             dataGridView1.DataSource = ReadDb();
             repit();
         }
-        double sum1 = 0, sum2 = 0;
+       
         private void CreateDb(addform infoform)
         {
             using (ApplicationContext db = new ApplicationContext(DataBaseHellper.Options()))
@@ -83,8 +83,6 @@ namespace склад
             if (infoForm.ShowDialog(this) == DialogResult.OK)
             {                
                 BSourse.ResetBindings(false);
-                sum1 += infoForm.sclad.fulprice;
-                sum2 += (infoForm.sclad.fulprice + (infoForm.sclad.fulprice * 0.2));
                 CreateDb(infoForm);
                 dataGridView1.DataSource = ReadDb();
                 repit();
@@ -93,8 +91,7 @@ namespace склад
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
             var id = (sclad)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
-            var infoForm = new addform(id);
-            
+            var infoForm = new addform(id);          
             if (infoForm.ShowDialog(this) == DialogResult.OK)
             {
                 id.name = infoForm.sclad.name;
@@ -105,8 +102,6 @@ namespace склад
                 id.price = infoForm.sclad.price;              
                 id.fulprice = infoForm.sclad.fulprice;
                 BSourse.ResetBindings(false);
-                sum1 += id.fulprice;
-                sum2 += (id.fulprice + (id.fulprice * 0.2));
                 UpDateDb(id);  
                 dataGridView1.DataSource = ReadDb();
                 repit();
