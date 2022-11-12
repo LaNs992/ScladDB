@@ -81,13 +81,9 @@ namespace склад
             var infoForm = new addform();
             infoForm.Text = "Добавление товара";
             if (infoForm.ShowDialog(this) == DialogResult.OK)
-            {
-                
+            {                
                 BSourse.ResetBindings(false);
-
-
                 sum1 += infoForm.sclad.fulprice;
-
                 sum2 += (infoForm.sclad.fulprice + (infoForm.sclad.fulprice * 0.2));
                 CreateDb(infoForm);
                 dataGridView1.DataSource = ReadDb();
@@ -101,14 +97,12 @@ namespace склад
             
             if (infoForm.ShowDialog(this) == DialogResult.OK)
             {
-
                 id.name = infoForm.sclad.name;
                 id.mater = infoForm.sclad.mater;
                 id.kol = infoForm.sclad.kol;
                 id.raz = infoForm.sclad.raz;
                 id.min = infoForm.sclad.min;
-                id.price = infoForm.sclad.price;
-              
+                id.price = infoForm.sclad.price;              
                 id.fulprice = infoForm.sclad.fulprice;
                 BSourse.ResetBindings(false);
                 sum1 += id.fulprice;
@@ -120,10 +114,8 @@ namespace склад
         }
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
-
             toolStripButton2.Enabled = toolStripButton3.Enabled = dataGridView1.SelectedRows.Count > 0;
             удалитьToolStripMenuItem.Enabled = изменитьToolStripMenuItem.Enabled = dataGridView1.SelectedRows.Count > 0;
-
         }
 
         private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
@@ -142,19 +134,16 @@ namespace склад
 
         private void toolStripButton2_Click(object sender, EventArgs e)
         {
-            var id = (sclad)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;
-            
+            var id = (sclad)dataGridView1.Rows[dataGridView1.SelectedRows[0].Index].DataBoundItem;      
             BSourse.ResetBindings(false);
             RemoveDb(id);
             dataGridView1.DataSource = ReadDb();
             repit();
-
         }
         private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             toolStripButton1_Click(sender, e);
         }
-
         private void изменитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
             toolStripButton3_Click(sender, e);
@@ -164,7 +153,6 @@ namespace склад
         {
             toolStripButton2_Click(sender, e);
         }
-
         private void forprogramToolStripMenuItem_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Склад гвоздей", "Бажин Кирилл Адреевич", MessageBoxButtons.OK, MessageBoxIcon.Information);
