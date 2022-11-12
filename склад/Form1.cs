@@ -56,14 +56,14 @@ namespace склад
                 }
             }
         }
-        private static void RemoveDb(sclad scld)
+         private static void RemoveDb(sclad scld)
         {
             using (ApplicationContext db = new ApplicationContext(DataBaseHellper.Options()))
             {
-                var tours = db.ScladDB.FirstOrDefault(u => u.Id == scld.Id);
-                if (tours != null)
+                var Scld = db.ScladDB.FirstOrDefault(u => u.Id == scld.Id);
+                if (scld != null)
                 {
-                    db.ScladDB.Remove(tours);
+                    db.ScladDB.Remove(Scld);
                     db.SaveChanges();
                 }
             }
